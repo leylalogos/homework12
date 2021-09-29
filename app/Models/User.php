@@ -17,9 +17,11 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    //is_active
     protected $fillable = [
-        'name',
+        'username',
         'email',
+        'mobile',
         'password',
     ];
 
@@ -41,4 +43,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function login(){}
 }
