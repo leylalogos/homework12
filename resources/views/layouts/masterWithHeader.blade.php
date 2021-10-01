@@ -11,7 +11,7 @@
                 @endphp
                 @if ($role == 'admin' || $role == 'normal')
                     {{-- {{!-- @if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'normal') --}}
-                    <a href="/userdashboard/showdashboard">پنل کاربری</a>
+                    <a href="{{route('user.dashboard')}}">پنل کاربری</a>
                     <a href="/upload/showuploadform">صفحه آپلود فایل توسط کاربر</a>
                     <a href="/filedetail/showdetails">مشاهده مشخصات فایل</a>
                 @endif

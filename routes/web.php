@@ -25,3 +25,5 @@ Route::post('login', 'AuthenticationController@doLogin')->name('dologin');
 Route::view('homepage', 'homePage')->name('homePage');//->middleware('auth');
 
 Route::get('logout', 'AuthenticationController@logout')->name('logout');
+
+Route::get('userdashboard', 'UserDashboardController@index')->name('user.dashboard')->middleware('auth');
