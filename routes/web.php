@@ -22,3 +22,6 @@ Route::post('register', 'AuthenticationController@addUser')->name('register');
 Route::get('login', 'AuthenticationController@loginForm')->name('login');
 Route::post('login', 'AuthenticationController@doLogin')->name('dologin');
 
+Route::view('homepage', 'homePage')->name('homePage');//->middleware('auth');
+
+Route::get('logout', 'AuthenticationController@logout')->name('logout');

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.master')
 @section('title','صفحه ورود')
 @section('content')
 <form action="{{route('dologin')}}" method="post">

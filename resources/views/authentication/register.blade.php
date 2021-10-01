@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.master')
 @section('title','صفحه ثبت نام')
 @section('content')
 <form action="{{route('register')}}" method="post">

@@ -43,6 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $attributes = [
+        'is_active' => true,
+        'credit' => 0,
+        'role_id' => 2 //normal role
+    ];
 
-    public static function login(){}
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

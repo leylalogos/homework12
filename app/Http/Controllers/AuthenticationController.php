@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use \App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
+
     //show register form to user
     public function registerForm()
     {
@@ -17,9 +18,7 @@ class AuthenticationController extends Controller
     //insert user into db
     public function addUser(RegisterRequest $request)
     {
-        $user  = User::create(
-            $request->except('password') + ['password' => bcrypt($request->password)]
-        );
+        $user = User::create($request->except('password') + ['password' => bcrypt($request->password)]);
         return redirect()->route('login');
     }
     //show login form to user
@@ -30,14 +29,17 @@ class AuthenticationController extends Controller
 
     public function doLogin(Request $request)
     {
-        $user = User::where('username', '=', $request->username)->firstOrFail();
-        if (Hash::check($request->password, $user->password)) {
-            $_SESSION['user_id'] = $user->id;
-        }
-        return redirect()->route('homepage');
+        $username = $request->username;
+        $password = $request->password;
+        
+        Auth::attempt(['username' => $username, 'password' => $password, 'is_active' => true]);
+
+        return redirect()->route('homePage');
     }
 
     public function logout()
     {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
