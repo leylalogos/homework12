@@ -17,6 +17,11 @@
                 <div class="card mt-5">
                     <div class="card-header" style="background-color: gold;">
                         @yield('title')
+                        <div style="text-align: end;
+                        display: inline;
+                        float: inline-end;">
+                            <a href="{{ route('homePage') }}">بازگشت به صفحه اصلی</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         @yield('content')

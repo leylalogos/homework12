@@ -42,3 +42,6 @@ Route::get('filedetailes','FileDetailesController@index')->name('show.index')->m
 Route::get('allfiles','FileManagementController@index')->name('files.index')->middleware('auth');
 Route::delete('destroyfile','FileManagementController@destroy')->name('files.destroy')->middleware('auth');
 Route::post('approvefiles','FileManagementController@approve')->name('files.approve')->middleware('auth');
+
+Route::get('setting/show','SettingController@index')->name('show.setting')->middleware('auth');
+Route::post('setsetting','SettingController@setSetting')->name('setsetting')->middleware('auth');

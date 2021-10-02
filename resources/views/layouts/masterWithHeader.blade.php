@@ -18,7 +18,7 @@
                 @if ($role == 'admin')
                     {{-- @ if($_SESSION['role'] == 'admin') --}}
                     <a href="{{route('user.index')}}">پنل مدیریت کاربران</a>
-                    <a href="/setting/showsetting">تنظیمات</a>
+                    <a href="{{route('show.setting')}}">تنظیمات</a>
                 @endif
                 @if ($role == 'admin' || $role == 'approval')
                     <a href="{{route('files.index')}}">پنل مدیریت فایل ها</a>
