@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('title','صفحه ورود')
+@section('col','6')
 @section('content')
 <form action="{{route('dologin')}}" method="post">
     @csrf

@@ -48,6 +48,17 @@ class User extends Authenticatable
         'credit' => 0,
         'role_id' => 2 //normal role
     ];
+    public function changeStatus()
+    {
+        $this->is_active = !$this->is_active;
+        $this->save();
+    }
+    public function changeRole($role_id)
+    {
+        $this->role_id = $role_id;
+        $this->save();
+    }
+
 
     public function role()
     {

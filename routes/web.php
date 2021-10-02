@@ -22,8 +22,12 @@ Route::post('register', 'AuthenticationController@addUser')->name('register');
 Route::get('login', 'AuthenticationController@loginForm')->name('login');
 Route::post('login', 'AuthenticationController@doLogin')->name('dologin');
 
-Route::view('homepage', 'homePage')->name('homePage');//->middleware('auth');
+Route::view('homepage', 'homePage')->name('homePage'); //->middleware('auth');
 
 Route::get('logout', 'AuthenticationController@logout')->name('logout');
 
 Route::get('userdashboard', 'UserDashboardController@index')->name('user.dashboard')->middleware('auth');
+
+Route::get('usermanage', 'UserManagementController@index')->name('user.index')->middleware('auth');
+Route::post('usermanage/status', 'UserManagementController@changeStatus')->name('user.changestatus')->middleware('auth');
+Route::post('usermanage/role', 'UserManagementController@changeRole')->name('user.changeRole')->middleware('auth');

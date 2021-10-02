@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('title','صفحه ثبت نام')
+@section('col','6')
 @section('content')
 <form action="{{route('register')}}" method="post">
     @csrf

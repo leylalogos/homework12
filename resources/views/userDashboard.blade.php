@@ -1,5 +1,6 @@
 @extends('layouts.masterWithHeader')
 @section('title', 'پنل کاربری')
+@section('col','8')
 @section('content')
     <table class="table table-bordered">
         <th>نام کاربری</th>

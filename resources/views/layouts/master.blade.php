@@ -13,9 +13,9 @@
     @yield('header')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-@yield('col','12')">
                 <div class="card mt-5">
-                    <div class="card-header " style="background-color: gold;">
+                    <div class="card-header" style="background-color: gold;">
                         @yield('title')
                     </div>
                     <div class="card-body">
