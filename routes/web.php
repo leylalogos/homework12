@@ -36,3 +36,5 @@ Route::get('uploaduser/index','UploadFileController@userindex')->name('upload.us
 Route::post('uploaduser/user','UploadFileController@uploadByUser')->name('upload.uploadbyuser');
 Route::get('uploaduser','UploadFileController@guestindex')->name('upload.guestindex');
 Route::post('uploaduser/guest','UploadFileController@uploadByGuest')->name('upload.uploadbyguest');
+
+Route::get('filedetailes','FileDetailesController@index')->name('show.index')->middleware('auth');

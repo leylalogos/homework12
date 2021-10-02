@@ -25,6 +25,7 @@ class UserManagementController extends Controller
         }
         $user = User::find($request->id);
         $user->changeStatus();
+        
     }
     public function changeRole(Request $request)
     {
