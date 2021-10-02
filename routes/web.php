@@ -38,3 +38,7 @@ Route::get('uploaduser','UploadFileController@guestindex')->name('upload.guestin
 Route::post('uploaduser/guest','UploadFileController@uploadByGuest')->name('upload.uploadbyguest');
 
 Route::get('filedetailes','FileDetailesController@index')->name('show.index')->middleware('auth');
+
+Route::get('allfiles','FileManagementController@index')->name('files.index')->middleware('auth');
+Route::delete('destroyfile','FileManagementController@destroy')->name('files.destroy')->middleware('auth');
+Route::post('approvefiles','FileManagementController@approve')->name('files.approve')->middleware('auth');

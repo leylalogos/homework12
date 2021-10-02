@@ -21,7 +21,7 @@
                     <a href="/setting/showsetting">تنظیمات</a>
                 @endif
                 @if ($role == 'admin' || $role == 'approval')
-                    <a href="/approve/showfiles">پنل مدیریت فایل ها</a>
+                    <a href="{{route('files.index')}}">پنل مدیریت فایل ها</a>
                 @endif
             @endauth
             @guest

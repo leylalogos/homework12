@@ -23,6 +23,7 @@ class UploadFileController extends Controller
             'user_id'=> auth()->id(), // using helper Auth::id()
             'path' => $path
         ]);
+        return redirect()->back();
     }
     public function guestindex()
     {
