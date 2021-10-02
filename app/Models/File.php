@@ -8,6 +8,19 @@ use Illuminate\Support\Facades\DB;
 
 class File extends Model
 {
+    protected $fillable = [
+        'name',
+        'extention',
+        'size',
+        'user_id',
+        'path'
+    ];
+
+    protected $attributes = [
+        'download_count' => 0,
+        'is_approved' => false,
+
+    ];
     // use HasFactory;
     public static function getUserFilesInformation($user_id)
     {

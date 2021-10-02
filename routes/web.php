@@ -31,3 +31,8 @@ Route::get('userdashboard', 'UserDashboardController@index')->name('user.dashboa
 Route::get('usermanage', 'UserManagementController@index')->name('user.index')->middleware('auth');
 Route::post('usermanage/status', 'UserManagementController@changeStatus')->name('user.changestatus')->middleware('auth');
 Route::post('usermanage/role', 'UserManagementController@changeRole')->name('user.changeRole')->middleware('auth');
+
+Route::get('uploaduser/index','UploadFileController@userindex')->name('upload.userindex');
+Route::post('uploaduser/user','UploadFileController@uploadByUser')->name('upload.uploadbyuser');
+Route::get('uploaduser','UploadFileController@guestindex')->name('upload.guestindex');
+Route::post('uploaduser/guest','UploadFileController@uploadByGuest')->name('upload.uploadbyguest');

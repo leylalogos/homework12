@@ -12,7 +12,7 @@
                 @if ($role == 'admin' || $role == 'normal')
                     {{-- {{!-- @if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'normal') --}}
                     <a href="{{route('user.dashboard')}}">پنل کاربری</a>
-                    <a href="/upload/showuploadform">صفحه آپلود فایل توسط کاربر</a>
+                    <a href="{{route('upload.userindex')}}">صفحه آپلود فایل توسط کاربر</a>
                     <a href="/filedetail/showdetails">مشاهده مشخصات فایل</a>
                 @endif
                 @if ($role == 'admin')
