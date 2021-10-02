@@ -19,8 +19,7 @@ class CreateFilesTable extends Migration
             $table->string('extention');
             $table->integer('size');
             $table->integer('download_count');
-            $table->foreignId('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->nullable();
             $table->boolean('is_approved');
             $table->timestamps();
         });

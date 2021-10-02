@@ -1,8 +1,8 @@
 @extends('layouts.masterWithHeader')
-@section('title', 'آپلود فایل توسط کاربر')
+@section('title', $authenticated?'آپلود فایل توسط کاربر':'آپلود فایل مهمان')
 @section('col','6')
 @section('content')
-	<form action="{{route('upload.uploadbyuser')}}" enctype="multipart/form-data" method="post">
+	<form action="{{$authenticated?route('upload.uploadbyuser'):route('upload.uploadbyguest')}}" enctype="multipart/form-data" method="post">
         @csrf
 		<div class="file">
 			<lable>

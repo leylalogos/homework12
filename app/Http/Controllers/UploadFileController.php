@@ -10,25 +10,39 @@ class UploadFileController extends Controller
 {
     public function userindex()
     {
-        return View('uploadByUser');
+        $authenticated = true;
+        return View('uploadFile')->with('authenticated', $authenticated);
     }
+
     public function uploadByUser(FileRequest $request)
     {
         $uploadedFile = $request->file('file_user');
         $path = $uploadedFile->store('userUploadedFile');
         File::create([
-            'name'=> $uploadedFile->getClientOriginalName() ,
-            'extention' =>$uploadedFile->extension(),
+            'name' => $uploadedFile->getClientOriginalName(),
+            'extention' => $uploadedFile->extension(),
             'size' => $uploadedFile->getSize(),
-            'user_id'=> auth()->id(), // using helper Auth::id()
+            'user_id' => auth()->id(), // using helper Auth::id()
             'path' => $path
         ]);
         return redirect()->back();
     }
     public function guestindex()
     {
+        $authenticated = false;
+
+        return View('uploadFile')->with('authenticated', $authenticated);
     }
-    public function uploadByGuest()
+    public function uploadByGuest(FileRequest $request)
     {
+        $uploadedFile = $request->file('file_user');
+        $path = $uploadedFile->store('userUploadedFile');
+        File::create([
+            'name' => $uploadedFile->getClientOriginalName(),
+            'extention' => $uploadedFile->extension(),
+            'size' => $uploadedFile->getSize(),
+            'path' => $path
+        ]);
+        return redirect()->back();
     }
 }

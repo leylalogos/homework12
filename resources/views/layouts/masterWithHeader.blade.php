@@ -25,7 +25,7 @@
                 @endif
             @endauth
             @guest
-                <a href="/upload/showUploadGuest">صفحه آپلود فایل به صورت مهمان</a>
+                <a href="{{route('upload.guestindex')}}">صفحه آپلود فایل به صورت مهمان</a>
                 <a href="{{ route('login') }}"> ورود</a>
             @endguest
         </div>
